@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="page-container">
     <md-app md-waterfall md-mode="fixed">
-      <md-app-toolbar class="md-primary">
+      <md-app-toolbar class="md-primary" v-if="isAuthorized">
         <span class="md-title">Socks interface</span>
       </md-app-toolbar>
-      <md-app-drawer md-permanent="full">
+      <md-app-drawer md-permanent="full" v-if="isAuthorized">
         <md-toolbar class="md-transparent" md-elevation="0">
           Navigation
         </md-toolbar>
@@ -19,6 +19,7 @@
 
 <script>
 import Routing from './components/shared/Routing'
+
 export default {
   name: 'App',
   components: {Routing},
@@ -27,6 +28,12 @@ export default {
       window.history.length > 1
         ? this.$router.go(-1)
         : this.$router.push('/')
+    }
+  },
+  computed: {
+    isAuthorized () {
+      console.log(this.$store)
+      return false
     }
   }
 }

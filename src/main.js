@@ -3,12 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import AppStore from './components/Stores/AppStore'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store: AppStore,
   router,
   components: {App},
   template: '<App/>'
