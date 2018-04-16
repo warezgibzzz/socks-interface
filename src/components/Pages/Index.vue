@@ -1,5 +1,5 @@
-<template>
-    <h1>Hello socks</h1>
+<template class="index-page">
+    <h1 class="hello">Hello socks</h1>
 </template>
 
 <script>
